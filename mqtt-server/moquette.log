@@ -1,0 +1,103 @@
+4348 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xdac7cca0] REGISTERED
+4350 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xdac7cca0] BIND: 0.0.0.0/0.0.0.0:8883
+4354 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xdac7cca0, L:/0:0:0:0:0:0:0:0:8883] ACTIVE
+41140 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xdac7cca0, L:/0:0:0:0:0:0:0:0:8883] RECEIVED: [id: 0xa7bd5cef, L:/127.0.0.1:8883 - R:/127.0.0.1:49402]
+48935 [nioEventLoopGroup-3-1] INFO  MqttServerHandler  - Received a message of type CONNECT
+49824 [nioEventLoopGroup-3-1] INFO  ProtocolProcessor  - CONNECT for client <SSLClientTest>
+1071 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x16b414cd] REGISTERED
+1074 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x16b414cd] BIND: 0.0.0.0/0.0.0.0:8883
+1076 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x16b414cd, L:/0:0:0:0:0:0:0:0:8883] ACTIVE
+9410 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x16b414cd, L:/0:0:0:0:0:0:0:0:8883] RECEIVED: [id: 0x3f7041ba, L:/127.0.0.1:8883 - R:/127.0.0.1:50387]
+9528 [nioEventLoopGroup-3-1] INFO  MqttServerHandler  - Received a message of type CONNECT
+9529 [nioEventLoopGroup-3-1] INFO  ProtocolProcessor  - CONNECT for client <SSLClientTest>
+9530 [nioEventLoopGroup-3-1] ERROR MqttServerHandler  - Bad error in processing the message
+java.lang.NullPointerException: qosLevel
+	at io.netty.util.internal.ObjectUtil.checkNotNull(ObjectUtil.java:31)
+	at io.netty.handler.codec.mqtt.MqttFixedHeader.<init>(MqttFixedHeader.java:42)
+	at sk.broker.ProtocolProcessor.connect(ProtocolProcessor.java:18)
+	at sk.broker.MqttServerHandler.channelRead0(MqttServerHandler.java:32)
+	at sk.broker.MqttServerHandler.channelRead0(MqttServerHandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1069)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:745)
+9654 [nioEventLoopGroup-3-1] WARN  DefaultChannelPipeline  - An exceptionCaught() event was fired, and it reached at the tail of the pipeline. It usually means the last handler in the pipeline did not handle the exception.
+java.lang.NullPointerException: qosLevel
+	at io.netty.util.internal.ObjectUtil.checkNotNull(ObjectUtil.java:31)
+	at io.netty.handler.codec.mqtt.MqttFixedHeader.<init>(MqttFixedHeader.java:42)
+	at sk.broker.ProtocolProcessor.connect(ProtocolProcessor.java:18)
+	at sk.broker.MqttServerHandler.channelRead0(MqttServerHandler.java:32)
+	at sk.broker.MqttServerHandler.channelRead0(MqttServerHandler.java:1)
+	at io.netty.channel.SimpleChannelInboundHandler.channelRead(SimpleChannelInboundHandler.java:105)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:293)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:267)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351)
+	at io.netty.handler.ssl.SslHandler.unwrap(SslHandler.java:1069)
+	at io.netty.handler.ssl.SslHandler.decode(SslHandler.java:902)
+	at io.netty.handler.codec.ByteToMessageDecoder.callDecode(ByteToMessageDecoder.java:411)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:248)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:351)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1334)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:373)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:359)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:926)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:129)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:651)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:574)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:488)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:450)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:873)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Thread.java:745)
+1063 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x1e624c3d] REGISTERED
+1064 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x1e624c3d] BIND: 0.0.0.0/0.0.0.0:8883
+1067 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x1e624c3d, L:/0:0:0:0:0:0:0:0:8883] ACTIVE
+7193 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0x1e624c3d, L:/0:0:0:0:0:0:0:0:8883] RECEIVED: [id: 0x376ab320, L:/127.0.0.1:8883 - R:/127.0.0.1:50442]
+7311 [nioEventLoopGroup-3-1] INFO  MqttServerHandler  - Received a message of type CONNECT
+7312 [nioEventLoopGroup-3-1] INFO  ProtocolProcessor  - CONNECT for client <SSLClientTest>
+1024 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xde52c9bf] REGISTERED
+1025 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xde52c9bf] BIND: 0.0.0.0/0.0.0.0:8883
+1028 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xde52c9bf, L:/0:0:0:0:0:0:0:0:8883] ACTIVE
+6306 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xde52c9bf, L:/0:0:0:0:0:0:0:0:8883] RECEIVED: [id: 0x7891f150, L:/127.0.0.1:8883 - R:/127.0.0.1:50529]
+6416 [nioEventLoopGroup-3-1] INFO  MqttServerHandler  - Received a message of type CONNECT
+6418 [nioEventLoopGroup-3-1] INFO  ProtocolProcessor  - CONNECT for client <SSLClientTest>
+1003 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xb39ea23a] REGISTERED
+1006 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xb39ea23a] BIND: 0.0.0.0/0.0.0.0:8883
+1009 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xb39ea23a, L:/0:0:0:0:0:0:0:0:8883] ACTIVE
+6583 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xb39ea23a, L:/0:0:0:0:0:0:0:0:8883] RECEIVED: [id: 0xebf767d2, L:/127.0.0.1:8883 - R:/127.0.0.1:50771]
+6701 [nioEventLoopGroup-3-1] INFO  MqttServerHandler  - Received a message of type CONNECT
+6701 [nioEventLoopGroup-3-1] INFO  ProtocolProcessor  - CONNECT for client <SSLClientTest>
+6710 [nioEventLoopGroup-2-1] INFO  LoggingHandler  - [id: 0xb39ea23a, L:/0:0:0:0:0:0:0:0:8883] RECEIVED: [id: 0x2bfbebe0, L:/127.0.0.1:8883 - R:/127.0.0.1:50772]
+6724 [nioEventLoopGroup-3-2] INFO  MqttServerHandler  - Received a message of type CONNECT
+6724 [nioEventLoopGroup-3-2] INFO  ProtocolProcessor  - CONNECT for client <SSLClientTest>
